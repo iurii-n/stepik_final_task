@@ -53,12 +53,6 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page2.is_basket_empty()
     page2.should_be_basket_empty_message()
 
-"""
-product_base_link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207"
-urls = [f"{product_base_link}?promo=offer{no}" if no != "???"
-        else pytest.param("bugged_link", marks=pytest.mark.xfail) for no in range(10)]
-@pytest.mark.parametrize('link', urls)"""
-
 @pytest.mark.need_review
 def test_guest_can_add_product_to_basket(browser, link):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
